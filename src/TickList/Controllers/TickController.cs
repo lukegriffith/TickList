@@ -30,8 +30,8 @@ namespace TickList.Controllers
         {
 
 
-            _tickService.NewItem("NewTickItem");
-            _tickService.NewItem("NewTickItem1");
+            //_tickService.NewItem("NewTickItem");
+            //_tickService.NewItem("NewTickItem1");
 
             return _tickService.GetList();
 
@@ -40,21 +40,25 @@ namespace TickList.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public TickItem Get(int id)
         {
-            return "value";
+            return _tickService.GetItem(id);
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post(string value)
         {
+            _tickService.NewItem(value);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]TickItem item)
         {
+
+            _tickService.ModifyItem(id, item);
+
         }
 
         // DELETE api/values/5
