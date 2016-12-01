@@ -46,9 +46,12 @@ namespace TickList.Controllers
         }
 
         // POST api/values
+        // Body string needs to be converted from string to json (ConvertFrom-Json)
         [HttpPost]
-        public void Post(string value)
+        public void Post([FromBody]String value)
         {
+
+            //Console.WriteLine("String value is |{0}|", value);
             _tickService.NewItem(value);
         }
 
@@ -65,6 +68,7 @@ namespace TickList.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            _tickService.RemoveItem(id);
         }
     }
 }
