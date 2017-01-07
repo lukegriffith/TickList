@@ -8,8 +8,12 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+<<<<<<< HEAD
 using Microsoft​.Extensions​.FileProviders;
 using TickList.Services;
+=======
+using TickListLinux.Services;
+>>>>>>> 190fde56e88e2c5232ad492df0c390f82624632d
 
 namespace TickList
 {

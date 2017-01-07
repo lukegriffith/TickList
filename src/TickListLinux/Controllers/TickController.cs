@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using TickList.Services;
-using TickList.Models;
+using TickListLinux.Services;
+using TickListLinux.Models;
 
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace TickList.Controllers
+namespace TickListLinux.Controllers
 {
     [Route("api/[controller]")]
     public class TickController : Controller
