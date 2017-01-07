@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft​.Extensions​.FileProviders;
 using TickList.Services;
 
 namespace TickList
@@ -58,8 +60,16 @@ namespace TickList
             app.UseApplicationInsightsRequestTelemetry();
 
             app.UseApplicationInsightsExceptionTelemetry();
-
+                        
             app.UseMvc();
+
+            // following https://docs.microsoft.com/en-us/aspnet/core/fundamentals/static-files
+            //  Added reference to "Microsoft.AspNetCore.StaticFiles": "1.0.0" in project.json
+            app.UseStaticFiles();
+            app.UseFileServer();
+
+     
+            
         }
     }
 }
