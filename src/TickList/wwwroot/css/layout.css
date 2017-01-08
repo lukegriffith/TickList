@@ -53,10 +53,12 @@
 }
 
 
-.content #item1:checked {
+input {
 	display: none;
 }
 
-.content #item1:checked ~  #label1 {
-	background: darkred;
+
+.box:checked + label   {
+	background: lightslategrey;
 }
+
