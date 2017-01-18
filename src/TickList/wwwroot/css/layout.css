@@ -14,6 +14,7 @@
 	max-width: 500px;
 	min-height: 200px;
 	margin-top: 40px;
+	margin-bottom: 40px;
 	padding: 10px;
 	background: whitesmoke;
 }
@@ -52,13 +53,13 @@
 	background: white;
 }
 
-/*
+
 input {
 	display: none;
 }
-*/
+
 
 .box:checked + label   {
-	background: lightslategrey;
+	background: darkred;
 }
 
