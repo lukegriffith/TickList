@@ -7,7 +7,7 @@
 	vertical-align: baseline;
 }
 
-.content {
+#content {
 	margin: 0 auto;
 	border: 1px dashed black;
 	border-radius: 10px;
@@ -19,20 +19,20 @@
 }
 
 
-.content h1 {
+#content h1 {
 	font-size: 1.5rem;
 	margin: 0px 0px 10px 0px;
 }
 
-.content article:nth-child(even){
+#content article:nth-child(even){
 	background: white;
 }
 
-.content article:nth-child(odd){
+#content article:nth-child(odd){
 	background: ghostwhite;
 }
 
-.content article {
+#content article {
 
 	min-height: 1rem;
 	border: 1px solid black;
@@ -52,11 +52,11 @@
 	background: white;
 }
 
-
+/*
 input {
 	display: none;
 }
-
+*/
 
 .box:checked + label   {
 	background: lightslategrey;
