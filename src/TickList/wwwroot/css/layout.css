@@ -68,6 +68,10 @@ p + a {
 	margin-left: auto;
 }
 
+
+/*
+	look at a way of getting saving done, via contentedible 
+
 p:read-write ~ .save  {
 	min-width: 20px;
 	max-height: 20px;
@@ -75,3 +79,5 @@ p:read-write ~ .save  {
 	background: whitesmoke;
 	margin-left: 5px;
 }
+
+*/
