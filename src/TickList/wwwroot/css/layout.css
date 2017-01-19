@@ -55,6 +55,7 @@
 
 
 input {
+	margin-left: auto;
 	display: none;
 }
 
@@ -63,3 +64,14 @@ input {
 	background: darkred;
 }
 
+p + a {
+	margin-left: auto;
+}
+
+p:read-write ~ .save  {
+	min-width: 20px;
+	max-height: 20px;
+	border: 1px dotted;
+	background: whitesmoke;
+	margin-left: 5px;
+}
