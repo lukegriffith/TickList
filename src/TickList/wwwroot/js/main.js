@@ -28,10 +28,6 @@ function newTickItemDom(id,text,completed) {
 
 }
 
-/*
-newTickItemDom(1,'This is a new item')
-newTickItemDom(2,'This is a new item')
-*/
 
 function getIDFromClass(className) {
     /*
