@@ -3,7 +3,7 @@
     <head>
         <link href="css/layout.css" rel="stylesheet" type="text/css">
         <link href="css/ticklist.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+        <!--<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">-->
         <title>TickList Project</title>
     </head>
     <body>
@@ -12,17 +12,15 @@
 
             <h1>TickList</h1>
             
-            <article class="tickItem" id="tick1">
-                <p>This is a new item</p>
-                <input type="checkbox" id="item1" class="box">
-                <label for="item1" class="tab"></label>
-                <label class="save"><a>Save</a></label>
-                    
-            </article>
+
 
 
         </section>
         
+        <section id="Add">
+            <input id="newItem" type="text" />
+            <input id="newItemSubmit" type="submit" onclick="Javascript:postItem()" value="Add">
+        </section>
 
     </body>
 
