@@ -61,7 +61,7 @@
 
 
 .box:checked + label   {
-	background: darkred;
+	background: lightsalmon;
 }
 
 p + a {

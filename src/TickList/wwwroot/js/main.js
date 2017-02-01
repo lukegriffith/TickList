@@ -34,11 +34,17 @@ newTickItemDom(2,'This is a new item')
 */
 
 function getIDFromClass(className) {
+    /*
+        Parses out ID from class name.
+    */
     return className.replace("item","")
 }
 
 
 function handleClick(inputItem){
+    /*
+        function handles checkbox click, on tickitem.
+    */
 
     var tickID, domObject, tickItem
 
@@ -91,6 +97,9 @@ function deleteTickItemFromDom(id){
 }
 
 function getTickListFromApi(){
+    /*
+        Obtains TickList from Tick API
+    */
 
     var req
 
@@ -152,7 +161,6 @@ function postItem(){
             newTickItemDom(resp.tickItemID, resp.title, resp.completed)
         }
 
-
         id = document.getElementsByClassName("tickItem").length + 1
 
         console.log("debug: id "+id+" text: "+text)
@@ -163,12 +171,7 @@ function postItem(){
         get.addEventListener("load", loadItem);
         get.send()
 
-
     }
-
-
-
-
 
     text = document.getElementById("newItem").value
     post = new XMLHttpRequest
@@ -177,7 +180,6 @@ function postItem(){
     post.setRequestHeader("Content-Type", "application/json");
     post.addEventListener("load",getItem)
     post.send(JSON.stringify(text))
-
 
 }
 
