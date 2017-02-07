@@ -28,21 +28,25 @@ function newTickItemDom(id,text,completed) {
 
 }
 
-/*
-newTickItemDom(1,'This is a new item')
-newTickItemDom(2,'This is a new item')
-*/
 
 function getIDFromClass(className) {
+    /*
+        Parses out ID from class name.
+    */
     return className.replace("item","")
 }
 
 
 function handleClick(inputItem){
+    /*
+        function handles checkbox click, on tickitem.
+    */
 
     var tickID, domObject, tickItem
 
     tickID = getIDFromClass(inputItem.id)
+
+    console.log("tickID: "+tickID)
 
     TickList.map(function(x){
         if (x.tickItemID == tickID) {
@@ -51,6 +55,8 @@ function handleClick(inputItem){
             tickItem = x
         }
     })
+
+    console.log(tickItem)
 
     pushTickListToApi(tickItem)
 
@@ -87,6 +93,9 @@ function deleteTickItemFromDom(id){
 }
 
 function getTickListFromApi(){
+    /*
+        Obtains TickList from Tick API
+    */
 
     var req
 
@@ -134,7 +143,41 @@ function pushTickListToApi(TickItem) {
     req.send(jsonBlob)
 }
 
-document.getElementsByTagName("input")
+function postItem(){
+    var text, post, id, get
+
+    function getItem(){
+
+        function loadItem() {
+            var resp
+
+            resp = JSON.parse(this.responseText)
+            console.log(resp)
+            TickList.push(resp)
+            newTickItemDom(resp.tickItemID, resp.title, resp.completed)
+        }
+
+        id = document.getElementsByClassName("tickItem").length + 1
+
+        console.log("debug: id "+id+" text: "+text)
+
+        get = new XMLHttpRequest
+        get.open("GET","api/Tick/"+id)
+        get.setRequestHeader("Content-Type", "application/json");
+        get.addEventListener("load", loadItem);
+        get.send()
+
+    }
+
+    text = document.getElementById("newItem").value
+    post = new XMLHttpRequest
+
+    post.open("POST","api/Tick",true)
+    post.setRequestHeader("Content-Type", "application/json");
+    post.addEventListener("load",getItem)
+    post.send(JSON.stringify(text))
+
+}
 
 TickList = new Array
 

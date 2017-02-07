@@ -54,20 +54,31 @@
 }
 
 
-input {
+#content input {
 	margin-left: auto;
 	display: none;
 }
 
 
 .box:checked + label   {
-	background: darkred;
+	background: lightsalmon;
 }
 
 p + a {
 	margin-left: auto;
 }
 
+#Add {
+	margin: 0 auto;
+	max-width: 150px;
+	text-align: center;
+
+}
+
+#Add #newItem {
+	border: 1px solid black;
+	margin-bottom: 5px;
+}
 
 /*
 	look at a way of getting saving done, via contentedible 
